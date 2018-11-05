@@ -1,0 +1,35 @@
+<% include ./header.ejs %>
+  <% include ./nav.ejs %>  
+  
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Add movie</h1>
+      <div class="container">
+        <div class="table-responsive">          
+          <form action="/" method="post">
+            <label>Name</label>
+            <input type="text" name="name">
+            <label>Genre</label>
+            <fieldset>
+              <span class="form-check">
+                <label><input type="radio" name="genre" value="Action"/>Action</label>
+                <label><input type="radio" name="genre" value="Adventure"/>Adventure</label>
+                <label><input type="radio" name="genre" value="Animation"/>Animation</label>
+                <label><input type="radio" name="genre" value="Biography"/>Biography</label>
+                <label><input type="radio" name="genre" value="Comedy"/>Comedy</label>
+                <label><input type="radio" name="genre" value="Crime"/>Crime</label>
+                <label><input type="radio" name="genre" value="Documentary"/>Documentary</label>
+                <label><input type="radio" name="genre" value="Drama"/>Drama</label>
+                <label><input type="radio" name="genre" value="Horror"/>Horror</label>
+              </span>
+            </fieldset>
+            <label>Year</label>            
+            <input type="text" name="year">
+            <input type="submit" value="Adicionar">
+            <a href="/"><input type="button" value="Cancelar"></a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<% include ./footer.ejs %>

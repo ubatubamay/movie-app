@@ -1,0 +1,68 @@
+<% include ./header.ejs %>
+  <% include ./nav.ejs %>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Movies</h1>
+      <div class="container">
+        <div class="table-responsive">          
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Year</th>
+                <th>Rating</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>            
+              <% if (mv) {
+                mv.forEach(function(movie){ %>
+                  <tr>
+                    <td><%= movie.name %></td>
+                    <td><%= movie.genre %></td>
+                    <td><%= movie.year %></td>
+                    <td><%= movie.rating %></td>
+                    <td>
+                      <a href="/edit/<%= movie._id %>"><i class="fas fa-pencil-alt"></i></a>
+                      <a href="/delete/<%= movie._id %>"><i class="fas fa-trash-alt"></i></a>
+                      <a href="/rating/<%= movie._id %>"><i class="fas fa-star-half-alt"></i></a>
+                    </td>
+                  </tr>
+                <%})
+              } %>            
+            </tbody>
+          </table>
+        </div>
+        <a href="/new">Add new movie</a>
+      </div>
+      <hr>
+      <h4>Recommended movies</h4>
+      <div class="table-responsive">          
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Genre</th>
+              <th>Year</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>            
+            <% if (mvRecommended) {
+              mvRecommended.forEach(function(movieRecommended){ %>
+                <tr>
+                  <td><%= movieRecommended.name %></td>
+                  <td><%= movieRecommended.genre %></td>
+                  <td><%= movieRecommended.year %></td>
+                  <td><%= movieRecommended.rating %></td>
+                </tr>
+              <%})
+            } %>            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+<% include ./footer.ejs %>

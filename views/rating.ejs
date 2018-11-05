@@ -1,0 +1,33 @@
+<% include ./header.ejs %>
+  <% include ./nav.ejs %>  
+  
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Rating movie</h1>
+      <h3><%= mv.name %></h3>
+      <h4><%= mv.genre %></h4>
+      <h4><%= mv.year %></h4>
+      <div class="container">
+        <div class="table-responsive">          
+          
+          <form action="<%= action %>" method="POST">
+            <fieldset>
+              <span>
+                <input type="radio" name="rating" value="5" <% if (mv.rating == 5){ %> checked="checked" <% } %> /><label>5</label>
+                <input type="radio" name="rating" value="4" <% if (mv.rating == 4){ %> checked="checked" <% } %> /><label>4</label>
+                <input type="radio" name="rating" value="3" <% if (mv.rating == 3){ %> checked="checked" <% } %> /><label>3</label>
+                <input type="radio" name="rating" value="2" <% if (mv.rating == 2){ %> checked="checked" <% } %> /><label>2</label>
+                <input type="radio" name="rating" value="1" <% if (mv.rating == 1){ %> checked="checked" <% } %> /><label>1</label>
+                <input type="radio" name="rating" value="0" <% if (mv.rating == 0){ %> checked="checked" <% } %> /><label>0</label>
+              </span>
+            </fieldset>
+            <input type="submit" value="Vote">
+            <a href="/"><input type="button" value="Cancelar"></a>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% include ./footer.ejs %>

@@ -1,0 +1,23 @@
+<% include ./header.ejs %>
+  <% include ./nav.ejs %>  
+  
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Edit movie</h1>
+      <div class="container">
+        <div class="table-responsive">          
+          <form action="<%= action %>" method="post">
+            <label for="">Name</label>
+            <input type="text" name="name" value="<%= mv.name %>">
+            <label for="">Genre</label>
+            <input type="text" name="genre" value="<%= mv.genre %>">
+            <label for="">year</label>
+            <input type="text" name="year" value="<%= mv.year %>">
+            <input type="submit" value="Update">
+            <a href="/"><input type="button" value="Cancelar"></a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<% include ./footer.ejs %>
