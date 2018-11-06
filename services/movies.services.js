@@ -44,10 +44,10 @@ movieService.updateMovie = async (req, res) => {
     });    
 }
 
-// movieService.getMovie = async (req, res) => {
-//     const movie = await Movie.findById(req.params.id);
-//     res.json(movie);
-// }
+movieService.getMovie = async (req, res) => {
+    const movie = await Movie.findById(req.params.id);
+    res.json(movie);
+}
 
 movieService.deleteMovie = async (req, res) => {
     await Movie.findByIdAndRemove(req.params.id, (err, doc) => {
